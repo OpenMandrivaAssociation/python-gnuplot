@@ -1,7 +1,7 @@
 Summary: A Python interface to the gnuplot plotting program
 Name:    python-gnuplot
 Version: 1.8
-Release: %mkrel 2
+Release: %mkrel 3
 Source0: http://downloads.sourceforge.net/gnuplot-py/gnuplot-py-%{version}.tar.gz
 License: LGPLv2
 Group:   Development/Python
