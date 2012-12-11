@@ -1,7 +1,7 @@
 Summary: A Python interface to the gnuplot plotting program
 Name:    python-gnuplot
 Version: 1.8
-Release: %mkrel 3
+Release: 4
 Source0: http://downloads.sourceforge.net/gnuplot-py/gnuplot-py-%{version}.tar.gz
 License: LGPLv2
 Group:   Development/Python
@@ -9,10 +9,10 @@ Url:     http://gnuplot-py.sourceforge.net
 Requires: gnuplot
 Requires: python-numpy
 Provides: gnuplot-py = %{version}
-Buildrequires: python-devel
-Buildrequires: gnuplot
-Buildrequires: python-numpy
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRequires: python-devel
+BuildRequires: gnuplot
+BuildRequires: python-numpy
+BuildRequires: pkgconfig(lapack)
 BuildArch: noarch
 
 
@@ -37,14 +37,25 @@ typing 'python %{py_puresitedir}/Gnuplot/demo.py'.
 python setup.py build
 
 %install
-rm -rf %{buildroot}
 python setup.py install --root="%{buildroot}" --prefix="%{_prefix}"
 
-%clean
-rm -rf %{buildroot}
-
 %files 
-%defattr(-,root,root,-)
 %doc ANNOUNCE.txt README.txt NEWS.txt FAQ.txt CREDITS.txt TODO.txt LICENSE.txt Gnuplot.html doc/
 %{py_puresitedir}/*
+
+
+
+%changelog
+* Tue Sep 15 2009 Thierry Vignaud <tv@mandriva.org> 1.8-3mdv2010.0
++ Revision: 442141
+- rebuild
+
+* Sat Jan 03 2009 Funda Wang <fwang@mandriva.org> 1.8-2mdv2009.1
++ Revision: 323716
+- rebuild
+
+* Wed Sep 03 2008 Gaëtan Lehmann <glehmann@mandriva.org> 1.8-1mdv2009.0
++ Revision: 279735
+- import python-gnuplot
+
 
