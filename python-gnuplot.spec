@@ -5,7 +5,7 @@ Release: 5
 Source0: http://downloads.sourceforge.net/gnuplot-py/gnuplot-py-%{version}.tar.gz
 License: LGPLv2
 Group:   Development/Python
-Url:     http://gnuplot-py.sourceforge.net
+Url:     https://gnuplot-py.sourceforge.net
 Requires: gnuplot
 Requires: python-numpy
 Provides: gnuplot-py = %{version}
